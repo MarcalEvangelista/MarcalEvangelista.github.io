@@ -1,0 +1,25 @@
+title: "Marçal Evangelista Santana"
+email: "seu.email@exemplo.com"
+description: >-
+  Página profissional de Marçal Evangelista Santana, pesquisador em astrofísica de pequenos corpos.
+baseurl: ""
+url: "https://marcalevangelista.github.io"
+theme: minimal-mistakes-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+minimal_mistakes_skin: "default"
+locale: "pt-BR"
+author:
+  name: "Marçal Evangelista Santana"
+  avatar: "/assets/images/perfil.jpg"
+  bio: "Pesquisador em astrofísica. Pós-doc no Instituto de Astrofísica de Andalucía - CSIC, Espanha."
+  links:
+    - label: "Lattes"
+      url: "https://lattes.cnpq.br/9028132638049706"
+    - label: "ORCID"
+      url: "https://orcid.org/0000-0002-1153-8768"
+    - label: "GitHub"
+      url: "https://github.com/marcalevangelista"
+    - label: "Email"
+      url: "mailto:seu.email@exemplo.com"

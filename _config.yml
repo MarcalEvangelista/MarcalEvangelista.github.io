@@ -12,7 +12,6 @@ locale: "en-US"
 url: "https://marcalevangelista.github.io"
 baseurl: ""
 
-# Social and contact links
 author:
   name   : "Marçal Evangelista"
   avatar : "/assets/images/bio-photo.jpg"
@@ -47,11 +46,20 @@ footer:
       icon: "fas fa-fw fa-book"
       url: "https://ui.adsabs.harvard.edu/"
 
-# Pagination
+# Navigation bar
+navigation:
+  - title: "About"
+    url: /about/
+  - title: "Publications"
+    url: /publications/
+  - title: "Projects"
+    url: /projects/
+  - title: "Contact"
+    url: /contact/
+
 paginate: 5
 paginate_path: "/page:num/"
 
-# Directory Settings
 include:
   - _pages
 
@@ -73,14 +81,6 @@ defaults:
       layout: single
       author_profile: true
 
-# Navigation bar
-header_pages:
-  - about.md
-  - publications.md
-  - projects.md
-  - contact.md
-
-# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -89,10 +89,11 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-# Archives
 category_archive:
   type: liquid
   path: /categories/
+
 tag_archive:
   type: liquid
   path: /tags/
+

@@ -1,3 +1,4 @@
+# Site settings
 title: "Marçal Evangelista"
 email: "marcal@iaa.es"
 description: >-
@@ -5,17 +6,20 @@ description: >-
   small Solar System bodies, and planetary system formation. This site includes publications, projects,
   code, outreach, and contact.
 
+locale: "en-US"
+url: "https://marcalevangelista.github.io"
+baseurl: ""  # Do not add a trailing slash
+
+# Theme settings
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "air"
 search: true
-locale: "en-US"
 
-url: "https://marcalevangelista.github.io"
-baseurl: ""
-
+# Author information
 author:
-  name   : "Marçal Evangelista"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
+  name: "Marçal Evangelista"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
   location: "Granada, Spain"
   links:
     - label: "Lattes"
@@ -32,8 +36,9 @@ author:
       url: "https://github.com/MarcalEvangelista"
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:marcal@astro.com"
+      url: "mailto:marcal@iaa.es"
 
+# Footer links
 footer:
   links:
     - label: "GitHub"
@@ -46,7 +51,7 @@ footer:
       icon: "fas fa-fw fa-book"
       url: "https://ui.adsabs.harvard.edu/"
 
-# Navigation bar
+# Navigation menu (linked to files in _pages/)
 navigation:
   - title: "About"
     url: /about/
@@ -57,12 +62,15 @@ navigation:
   - title: "Contact"
     url: /contact/
 
-paginate: 5
-paginate_path: "/page:num/"
-
+# Directory structure
 include:
   - _pages
 
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Layout defaults
 defaults:
   - scope:
       path: ""
@@ -74,6 +82,7 @@ defaults:
       comments: false
       share: true
       related: true
+
   - scope:
       path: "_pages"
       type: pages
@@ -81,14 +90,7 @@ defaults:
       layout: single
       author_profile: true
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
+# Archives
 category_archive:
   type: liquid
   path: /categories/
@@ -96,4 +98,14 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 

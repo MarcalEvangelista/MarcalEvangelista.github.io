@@ -4,11 +4,15 @@ description: >-
   Personal academic website of Marçal Evangelista, astrophysicist specialized in cometary science,
   small Solar System bodies, and planetary system formation.
 
+# ATENÇÃO AQUI: este é o tema remoto oficial
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 minimal_mistakes_skin: "air"
-search: true
 locale: "en-US"
+search: true
 url: "https://marcalevangelista.github.io"
 baseurl: ""
+
 
 author:
   name   : "Marçal Evangelista"

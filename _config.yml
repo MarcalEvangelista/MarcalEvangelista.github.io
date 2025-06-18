@@ -18,7 +18,7 @@ search: true
 # Author information
 author:
   name: "Marçal Evangelista"
-  avatar: "/assets/images/bio-photo.jpg"
+  avatar: "/home/marcal/Personal/site_profissional/assets/images/marcal.jpg"
   bio: "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
   location: "Granada, Spain"
   links:
@@ -108,4 +108,5 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+
 

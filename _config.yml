@@ -4,15 +4,15 @@ description: >-
   Personal academic website of Marçal Evangelista, astrophysicist specialized in cometary science,
   small Solar System bodies, and planetary system formation.
 
-minimal_mistakes_skin: "default"
-locale: "en-US"
+minimal_mistakes_skin: "air"
 search: true
+locale: "en-US"
 url: "https://marcalevangelista.github.io"
 baseurl: ""
 
 author:
   name   : "Marçal Evangelista"
-  avatar : "home/marcal/Personal/site_profissional/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.jpg"
   bio    : "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
   location: "Granada, Spain"
   links:
@@ -43,8 +43,6 @@ footer:
     - label: "ADS"
       icon: "fas fa-fw fa-book"
       url: "https://ui.adsabs.harvard.edu/"
-
-
 
 paginate: 5
 paginate_path: "/page:num/"

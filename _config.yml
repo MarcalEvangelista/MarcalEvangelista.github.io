@@ -1,25 +1,19 @@
-# Site settings
 title: "Marçal Evangelista"
 email: "marcal@iaa.es"
 description: >-
   Personal academic website of Marçal Evangelista, astrophysicist specialized in cometary science,
-  small Solar System bodies, and planetary system formation. This site includes publications, projects,
-  code, outreach, and contact.
+  small Solar System bodies, and planetary system formation.
 
+minimal_mistakes_skin: "default"
 locale: "en-US"
-url: "https://marcalevangelista.github.io"
-baseurl: ""  # Do not add a trailing slash
-
-# Theme settings
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "air"
 search: true
+url: "https://marcalevangelista.github.io"
+baseurl: ""
 
-# Author information
 author:
-  name: "Marçal Evangelista"
-  avatar: "/home/marcal/Personal/site_profissional/assets/images/marcal.jpg"
-  bio: "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
+  name   : "Marçal Evangelista"
+  avatar : "home/marcal/Personal/site_profissional/assets/images/bio-photo.jpg"
+  bio    : "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
   location: "Granada, Spain"
   links:
     - label: "Lattes"
@@ -38,7 +32,6 @@ author:
       icon: "fas fa-fw fa-envelope"
       url: "mailto:marcal@iaa.es"
 
-# Footer links
 footer:
   links:
     - label: "GitHub"
@@ -51,26 +44,14 @@ footer:
       icon: "fas fa-fw fa-book"
       url: "https://ui.adsabs.harvard.edu/"
 
-# Navigation menu (linked to files in _pages/)
-navigation:
-  - title: "About"
-    url: /about/
-  - title: "Publications"
-    url: /publications/
-  - title: "Projects"
-    url: /projects/
-  - title: "Contact"
-    url: /contact/
 
-# Directory structure
-include:
-  - _pages
 
-# Pagination
 paginate: 5
 paginate_path: "/page:num/"
 
-# Layout defaults
+include:
+  - _pages
+
 defaults:
   - scope:
       path: ""
@@ -82,7 +63,6 @@ defaults:
       comments: false
       share: true
       related: true
-
   - scope:
       path: "_pages"
       type: pages
@@ -90,18 +70,7 @@ defaults:
       layout: single
       author_profile: true
 
-# Archives
-category_archive:
-  type: liquid
-  path: /categories/
-
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# Plugins
 plugins:
-  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -109,4 +78,10 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 

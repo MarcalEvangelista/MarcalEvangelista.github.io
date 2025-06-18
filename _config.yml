@@ -17,7 +17,7 @@ baseurl: ""
 author:
   name   : "Marçal Evangelista"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Astrophysicist | Comets, Dust, and Small Bodies | Postdoc at IAA-CSIC"
+  bio    : "Astrophysicist"
   location: "Granada, Spain"
   links:
     - label: "Lattes"

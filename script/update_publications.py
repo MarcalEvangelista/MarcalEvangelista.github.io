@@ -5,7 +5,7 @@ import os
 ADS_TOKEN = os.environ["ADS_TOKEN"]
 headers = {"Authorization": f"Bearer {ADS_TOKEN}"}
 
-query = 'author:("M.E. SANTANA" OR "EVANGELISTA-SANTANA, M." OR "Evangelista Santana, Marçal")'
+query = 'author:("EVANGELISTA-SANTANA, M." OR "Evangelista Santana, Marçal")'
 params = {
     "q": query,
     "fl": "title,bibcode,author,pubdate",

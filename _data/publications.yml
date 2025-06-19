@@ -1,34 +1,326 @@
-import requests
-import yaml
-
-# Sua API key
-ADS_TOKEN = "ynygJ9vdhawN3I1RwvcLuKzMkE7yYMDNZHbGH0SY"
-headers = {"Authorization": f"Bearer {ADS_TOKEN}"}
-
-# Query ADS
-query = 'author:("M.E. SANTANA" OR "EVANGELISTA-SANTANA, M." OR "Evangelista Santana, Marçal")'
-params = {
-    "q": query,
-    "fl": "title,bibcode,author,pubdate",
-    "rows": 50,
-    "sort": "pubdate desc",
-    "format": "json"
-}
-
-response = requests.get("https://api.adsabs.harvard.edu/v1/search/query", headers=headers, params=params)
-docs = response.json().get("response", {}).get("docs", [])
-
-# Formatar como YAML
-publications = []
-for doc in docs:
-    publications.append({
-        "title": doc["title"][0],
-        "authors": ", ".join(doc["author"]),
-        "year": doc["pubdate"][:4],
-        "url": f"https://ui.adsabs.harvard.edu/abs/{doc['bibcode']}"
-    })
-
-# Salvar no local correto
-with open("_data/publications.yml", "w") as f:
-    yaml.dump(publications, f, allow_unicode=True)
-
+- authors: da Silva Rodrigues, Tiago, Roque, Cassiano Garcia, Santana, Dthenifer Cordeiro,
+    Navarrete, Acacio Aparecido, de Cássia Félix Alvarez, Rita, Teodoro, Larissa Pereira
+    Ribeiro, Soares, Eduarda Santana, Teodoro, Paulo Eduardo
+  title: 'Potassium silicate as a replacement for potassium chloride in cotton plants:
+    impacts on agronomical variables'
+  url: https://ui.adsabs.harvard.edu/abs/2025ArASS..71....1D
+  year: '2025'
+- authors: Coutinho, Carlos Roberto, Santana, Marcelo Eduardo, Owatari, Marco Shizuo,
+    Arana, Luis Alejandro Vinatea
+  title: Superintensive pre-nursery for Litopenaeus vannamei (PL15–35) varying stocking
+    densities and water flow rates in clear-water recirculating aquaculture system
+  url: https://ui.adsabs.harvard.edu/abs/2025AqInt..33..385C
+  year: '2025'
+- authors: García, Kevin J., Santana, José E., Miranda, Álvaro, Trejo, Alejandro,
+    Salazar, Fernando, Hernández-Hernández, Ivonne J., Pérez, Luis A., Cruz-Irisson,
+    Miguel
+  title: 'DNA/RNA nucleobases sensing by silicon nanowires: A DFT study'
+  url: https://ui.adsabs.harvard.edu/abs/2025Vacuu.23914383G
+  year: '2025'
+- authors: Farias, Ana Beatriz de S., Santana, Thiago M., Older, Caitlin E., Huang,
+    Jing, Jordan, Heather R., Affonso, Elizabeth G., Gatlin, Delbert M., Griffin,
+    Matt J., Yamamoto, Fernando Y., Gonçalves, Ligia U.
+  title: Black soldier fly larvae oil as a potential nutraceutical ingredient in diets
+    for hybrid catfish Ictalurus punctatus × I. furcatus juveniles
+  url: https://ui.adsabs.harvard.edu/abs/2025Aquac.60842697F
+  year: '2025'
+- authors: Reis, Tâmara V., dos Reis, Laís L., Santana, Aiane N., Ferraz, Caline G.,
+    Araújo, Floricea M., Guedes, Maria L. S., Ribeiro, Paulo R., Cruz, Frederico G.
+  title: 4-Phenylcoumarins and xanthones from Kielmeyera coriacea Mart. And their
+    chemophenetic significance
+  url: https://ui.adsabs.harvard.edu/abs/2025BioSE.12105017R
+  year: '2025'
+- authors: Santana, Tamiris Dias, Dantas, Thaise, Souza, Maria Ingrid de, Costa, Edilson,
+    Binotti, Flávio Ferreira da Silva, Vendruscolo, Eduardo Pradi, Vieira, Gustavo
+    Haralampidou da Costa, Silva, Giovana Pinheiro Viana da, Melo, Paulo Henrique
+    Rosa, Scalon, Silvana de Paula Quintão
+  title: Colored cultivation benches increase the production and bioactive compounds
+    in arugula
+  url: https://ui.adsabs.harvard.edu/abs/2025SAJB..183..136S
+  year: '2025'
+- authors: Pardillos-Pobo, D., González-Gómez, P. A., Laporte-Azcué, M., Cholette,
+    M. E., Santana, D.
+  title: Design of coil-wound heat exchangers for molten chloride salt TES in CSP
+    with sodium receiver and sCO<SUB>2</SUB> cycle
+  url: https://ui.adsabs.harvard.edu/abs/2025JEnSt.12817210P
+  year: '2025'
+- authors: da Silveira, Juliane M., Boeira, Matheus de A., Santana, Marcel B., Jr.,
+    Greidanus, Marian R., Ascencio, Jesús J., Chandel, Anuj K., Trichez, Débora, Stambuk,
+    Boris U., Ienczak, Jaciane L.
+  title: Evolutionary engineering and mutagenesis as alternatives to improve Spathaspora
+    passalidarum for second-generation ethanol production
+  url: https://ui.adsabs.harvard.edu/abs/2025BmBe..19807885D
+  year: '2025'
+- authors: Santana, Amir Alfonso Rodriguez, Danaeifar, Mohammad
+  title: Polarization sensitivity engineering in WS<SUB>2</SUB> metasurfaces governed
+    by quasi-bound states in the continuum
+  url: https://ui.adsabs.harvard.edu/abs/2025PhNan..6501387S
+  year: '2025'
+- authors: Lima, Clara Mariana Gonçalves, Silveira, Paula Giarolla, Santana, Renata
+    Ferreira, da Piedade Edmundo Sitoe, Eugénio, Bonomo, Renata Cristina Ferreira,
+    Coutinho, Henrique Douglas Melo, Wawrzyniak, Jolanta, de Carvalho dos Anjos, Virgílio,
+    Bell, Maria José Valenzuela, Contado, José Luís, Zengin, Gökhan, da Rocha, Roney
+    Alves
+  title: 'Leveraging infrared spectroscopy for cocoa content prediction: A dual approach
+    with Kohonen neural network and multivariate modeling'
+  url: https://ui.adsabs.harvard.edu/abs/2025AcSpA.33525975L
+  year: '2025'
+- authors: Hernández-Lasheras, Jaime, Orfila, Alejandro, Santana, Alex, Hernández-Carrasco,
+    Ismael, Mourre, Baptiste
+  title: High frequency radar observing system simulation experiment in the Western
+    Mediterranean Sea. A Lagrangian assessment approach
+  url: https://ui.adsabs.harvard.edu/abs/2025OcMod.19602553H
+  year: '2025'
+- authors: Santana, Karina C., Maccagni, Filippo M., Deane, Roger P., Healy, Julia
+  title: MeerKAT discovery of an infalling cold gas tail on to the nearby barred spiral
+    galaxy, NGC 5643
+  url: https://ui.adsabs.harvard.edu/abs/2025MNRAS.540.2396S
+  year: '2025'
+- authors: Justi, Luiz Henrique Zaniolo, Silva, Juliana Ferreira, Santana, Manuela
+    Santos, Laureano, Henrique Aparecido, Pereira, Meire Ellen, Oliveira, Cláudia
+    Sirlene, Guiloski, Izonete Cristina
+  title: 'Non-steroidal anti-inflammatory drugs and oxidative stress biomarkers in
+    fish: a meta-analytic review'
+  url: https://ui.adsabs.harvard.edu/abs/2025ToxR...1401910J
+  year: '2025'
+- authors: Santana, William, Dias-Silva, Isabella, João, Marcio C. A., Tavares, Marcos,
+    Pinheiro, Marcelo A. A.
+  title: Application of DNA fingerprint to link megalopas and adults of Johngarthia
+    lagostoma (H. Milne Edwards, 1837) (Decapoda, Gecarcinidae) and description and
+    illustration of the megalopa stage
+  url: https://ui.adsabs.harvard.edu/abs/2025MarBd..55...47S
+  year: '2025'
+- authors: Paixão, Peterson Emmanuel Guimarães, Filho, Ricardo Marques Nogueira, Abe,
+    Higo Andrade, Madi, Rubens Riscala, Santos, Cindy Caroline Moura, da Costa Sousa,
+    Natalino, do Couto, Márcia Valéria Silva, Santos, Hugo Leandro, Santana, Fabricio
+    Sa, Carvalho, Amanda Silva, Araujo, Juliana Matos, Fujimoto, Rodrigo Yudi
+  title: 'Influence of autochthonous pathogens on fish adaptation to new rearing conditions
+    after experiencing post-transport stress: A neglected factor in quarantine protocol
+    development'
+  url: https://ui.adsabs.harvard.edu/abs/2025Aquac.60442378P
+  year: '2025'
+- authors: Auler, Augusto S., Audra, Philippe, De Waele, Jo, Maia, Rubson P., Bezerra,
+    Francisco H. R., Wang, Xianfeng, Antonellini, Marco, Balsamo, Fabrizio, Bertotti,
+    Giovanni, Furtado, Carla, La Bruna, Vincenzo, Lima, Rebeca, Lima-Filho, Francisco
+    Pinheiro, Pisani, Luca, Pontes, Cayo C. C., Pujoni, Diego, Santana, Felipe, dos
+    Santos, Eliana E., Valle, Murilo A., Veitenheimer, Gabriela
+  title: Hydraulic and climate controls of hypogene and epigene speleogenesis at a
+    regional scale in northeastern Brazil
+  url: https://ui.adsabs.harvard.edu/abs/2025Geomo.47809733A
+  year: '2025'
+- authors: Bertoldi, Michele Corrêa, Resende, Monique Ellen Torres, Grigório, Joyce
+    Késsia Alves, Santana, Hernani Ciro
+  title: 'Worldwide distribution, current trends and scientific progress in Spirulina
+    research (1967–2024): A Scientometric analysis'
+  url: https://ui.adsabs.harvard.edu/abs/2025AlgRe..8804029B
+  year: '2025'
+- authors: Garcia, Iker, Santana, Roberto, Gonzalez, Jennifer
+  title: 'DN<mml:math><mml:mi>k</mml:mi></mml:math>S: A distance-based neighborhood
+    <mml:math><mml:mi>k</mml:mi></mml:math>-search algorithm for determining meter–transformer
+    connectivity in low-voltage grids'
+  url: https://ui.adsabs.harvard.edu/abs/2025SEGN...4201707G
+  year: '2025'
+- authors: Santos, Leilane R., Santana, Filipe B., Silveira, Hilária F. A., de Carvalho,
+    Wellington C., Souza, Laís A., Araujo, Rennan Geovanny O., Korn, Maria Graças
+    A., Santos, Daniele Cristina M. B.
+  title: 'Inorganic constituents in cassava derivatives: Total concentration, dietary
+    intake and bioaccessibility'
+  url: https://ui.adsabs.harvard.edu/abs/2025JTEM...1200216S
+  year: '2025'
+- authors: Cruz, Beatriz Liara da, Archanjo, Raissa Eduarda da Silva, Silva, Renato
+    Villela Mafra Alves da, Santana, Derielsen Brandão, Rios, Guilherme da Silva,
+    Moreira, Vinícius Borges, Oliveira, Thomaz Alvisi de, Fernandes, Nelson Ferreira,
+    Mincato, Ronaldo Luiz, Rubira, Felipe Gomes
+  title: Reorganization of the drainage network based on morphostructural controls
+    in passive margins
+  url: https://ui.adsabs.harvard.edu/abs/2025Geomo.47809693C
+  year: '2025'
+- authors: Cruz, Lícia P. S., Moreira, Mateus S., dos Santos, Ivanice F., da Rocha,
+    Franciele O. C., Assunção, Danillo L., Santana, Rejane P. J., da Cruz Filho, Basílio
+    E.
+  title: Chemometrics and Human Health Risk Assessment Associated with BTEX Compounds
+    in Groundwater at Gas Stations
+  url: https://ui.adsabs.harvard.edu/abs/2025WASP..236..377C
+  year: '2025'
+- authors: Zayas-Bazán, P. G., Galdámez-Martínez, Andrés, Lugo-Ruiz, Diego, Rodríguez,
+    Iván R., Castellanos, Kevin Rueda, Ramos, Carlos, Santana, Guillermo, Karthik,
+    Tangirala VK, Dutt, Ateet
+  title: High-performance acetone detection via one-dimensional sulfur-doped ZnO nanostructures
+  url: https://ui.adsabs.harvard.edu/abs/2025SeAcA.38716365Z
+  year: '2025'
+- authors: Ferreira e Ferreira, Alex Augusto, Santana, Hallison Mota, dos Reis, Valdison
+    Pereira, Magalhães, João Gabriel dos Santos, Silva, Milena Daniela Souza, da Silva,
+    Carolina Pereira, Paloschi, Mauro Valentino, Silva, André Alves, de Sousa, Marlei
+    Novaes, Soares, Andreimar Martins, Zamuner, Stella Regina, Zuliani, Juliana Pavan
+  title: LED photobiomodulation reduces myonecrosis and hemorrhage caused by PI metalloproteinase
+    isolated from Bothrops jararacussu venom
+  url: https://ui.adsabs.harvard.edu/abs/2025JPPB..26713163F
+  year: '2025'
+- authors: Brito-Abrante, Idaira, Astruc, Laurence, Santana, Jonathan, Morales, Jacob,
+    Rodríguez-Rodríguez, Amelia
+  title: 'Living on sand. A functional and PDSM analysis of obsidian and other volcanic
+    rock tools from two coastal settlements: Playa Chica and Dunas de Maspalomas (Gran
+    Canaria, Spain)'
+  url: https://ui.adsabs.harvard.edu/abs/2025ArAnS..17..129B
+  year: '2025'
+- authors: Santana, L. M., Okumko, V., King, A., Morgeneyer, T. F., Besson, J., Madi,
+    Y.
+  title: Investigating the influence of strain rate on hydrogen embrittlement in steel
+    sub-size tensile specimens using 3D X-ray tomography
+  url: https://ui.adsabs.harvard.edu/abs/2025IJHE..138..626S
+  year: '2025'
+- authors: Santana, Jonathan, del Pino Curbelo, Miguel, Iriarte, Eneko, Morales, Jacob,
+    Caro, José L., Fregel, Rosa, Hagenblad, Jenny, García González, Rebeca, Rodríguez
+    Rodríguez, Amelia
+  title: Climate, biogeography, and human resilience in the demographic history of
+    the Canary Islands during the Amazigh period
+  url: https://ui.adsabs.harvard.edu/abs/2025NatSR..1519485S
+  year: '2025'
+- authors: Santos, Victor B., Jordão, Cauã O., Ibiapina, Leonardo J. O., Silva, Gabriel
+    M., Santana, Mirella E. B., Garrido, Matheus A., Farias, Lucas R. C.
+  title: 'IDEIA: A Generative AI-Based System for Real-Time Editorial Ideation in
+    Digital Journalism'
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250607278S
+  year: '2025'
+- authors: Goncalves, Victor P., Santana, Luana, Schäfer, Wolfgang
+  title: Investigating the inclusive $D^0$ photoproduction in ultraperipheral $PbPb$
+    collisions at the Large Hadron Collider
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250602223G
+  year: '2025'
+- authors: Colonius, Fritz, Santana, Alexandre J.
+  title: Chain Recurrence and Selgrade's Theorem for Affine Flows
+  url: https://ui.adsabs.harvard.edu/abs/2025JDDE...37.1355C
+  year: '2025'
+- authors: Buzzi, Claudio, Gasull, Armengol, Santana, Paulo
+  title: On the cyclicity of hyperbolic polycycles
+  url: https://ui.adsabs.harvard.edu/abs/2025JDE...429..646B
+  year: '2025'
+- authors: Santana, E. G., Jr, Benjamin, Gabriel, Araujo, Melissa, Santos, Harrison,
+    Freitas, David, Almeida, Eduardo, Neto, Paulo Anselmo da M. S., Li, Jiawei, Chun,
+    Jina, Ahmed, Iftekhar
+  title: Which Prompting Technique Should I Use? An Empirical Investigation of Prompting
+    Techniques for Software Engineering Tasks
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250605614S
+  year: '2025'
+- authors: Santana, E. G., Jr, Pereira Santos Junior, Jander, Almeida, Erlon P., Ahmed,
+    Iftekhar, Anselmo da Mota Silveira Neto, Paulo, Santana de Almeida, Eduardo
+  title: 'Evaluating LLMs Effectiveness in Detecting and Correcting Test Smells: An
+    Empirical Study'
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250607594S
+  year: '2025'
+- authors: Ferreira, Charles, Martins, Thais, Melo, Leticia, Veneza, Ivana, Santana,
+    Paula, Miranda, Josy, Lutz, Ítalo, Sousa, Jefferson, Cardoso, Bruna, Miranda,
+    Aline, da Costa, Jorge Luís, Matos, Suane, Holanda, Francisco Carlos, Vallinoto,
+    Marcelo, Sampaio, Iracilda, Evangelista-Gomes, Grazielle
+  title: DNA reveal new invasive species of tiger shrimp Penaeus monodon (Penaeidae)
+    along the world's largest mangrove region in the Brazilian Blue Amazon
+  url: https://ui.adsabs.harvard.edu/abs/2025NatSR..1518058F
+  year: '2025'
+- authors: Santana, José E., Hernández-Hernández, Ivonne J., Pérez, Luis A.
+  title: 'Volatile biomarker detection using metal-decorated silicon nanowires for
+    environmental and biomedical applications: A DFT study'
+  url: https://ui.adsabs.harvard.edu/abs/2025ApSS..69162685S
+  year: '2025'
+- authors: Carvalho, Paulo H. B., Santana, Ewaldo E. C., Barros Filho, Allan K. D.,
+    Silva Júnior, Paulo F., Martins, Keyll C. R., Azevedo, Talita C., Martins, Waldemir
+    P., Medeiros, Mauro A., Gonçalves, Rubens S., Sousa Filho, Lourival M., Correia,
+    Gricirene S., Fernandes, Gabrielle M., Pinheiro, Talita C., Rodrigues, Brenda
+    A. S., Cruz, Carlos A. M.
+  title: Electromagnetic textile absorber applied to 4G and 5G bands
+  url: https://ui.adsabs.harvard.edu/abs/2025NatSR..1518768C
+  year: '2025'
+- authors: Santana, Ingrid Larissa da Silva, Silva, Marina Gomes, Ourem, Gabriel Paiva,
+    Cavalcanti, Vanessa de Oliveira Marques, Melo, Ana Maria Mendonça de Albuquerque,
+    Sá, José Luís Ferreira, de Lucena, Alex Leandro Andrade, Napoleão, Daniella Carla,
+    Duarte, Marta Maria Menezes Bezerra
+  title: 'Development of magnetite modified graphite electrode: Application in electro-Fenton
+    process for degradation of antidiabetic drug metformin hycloridate'
+  url: https://ui.adsabs.harvard.edu/abs/2025CEPPI.21110243S
+  year: '2025'
+- authors: Shrivastava, C., Cook, H., Haugvaldstad, K., Mishra, A., Hird, J., Santana,
+    R., Durairajan, B.
+  title: A New Measurement with World's First At-Bit Imaging
+  url: https://ui.adsabs.harvard.edu/abs/2025medt.conf25716S
+  year: '2025'
+- authors: Lucena, Luiza, Robeson, Audrey, Falcão, Cassiano José Lages Marinho, Paulina,
+    Lorena, Santana, Ana Clara, Hakamada, Rodrigo
+  title: 'Innovating forest science education through problem-based learning: Insights
+    from a public university in Brazil'
+  url: https://ui.adsabs.harvard.edu/abs/2025ForPE.17403476L
+  year: '2025'
+- authors: Andrade, J., Santana, D., Naseer, Tayyab, Londo, Fabián
+  title: Ultra-compact anisotropic stellar model with vanishing complexity
+  url: https://ui.adsabs.harvard.edu/abs/2025EPJC...85..598A
+  year: '2025'
+- authors: Santana, Emiliane Karolina Gonçalves dos Santos Braga, Paula, Júnia Nunes
+  title: A literature review based on the potential of use of RAP (Reclaimed Asphalt
+    Pavement) in the base and subbase layers of flexible pavements
+  url: https://ui.adsabs.harvard.edu/abs/2025SoRoc..48E0224S
+  year: '2025'
+- authors: Oliveira de Matos, Matheus Henrique de, Santana, Loiani Oliveira, de Oliveira,
+    Felipe Rafael, Progênio, Melissa, Leite, Edilaine Corrêa, Bredariol, João Vitor,
+    Velho, Luiz Felipe Machado
+  title: Short-term and seasonal dynamics of planktonic protist community (Alveolata,
+    Ciliophora) in a neotropical urban lake, Maringá - Paraná, Brazil
+  url: https://ui.adsabs.harvard.edu/abs/2025Limng.11226251O
+  year: '2025'
+- authors: Pereira, Israel M., Mucida, Danielle P., Oliveira, Marcio L. R., Barroso,
+    Gabriela M., Santana, Reynaldo C., Titon, Miranda, Santos, José B.
+  title: Impacts of controlling exotic grasses on natural regeneration of Eremanthus
+    incanus (Less.) Less
+  url: https://ui.adsabs.harvard.edu/abs/2025ResEc..3370033P
+  year: '2025'
+- authors: Altahsh, Deyana, Holdbrook, Linda, Norrie, Eric, Sahilie, Adanech, Essar,
+    Mohammad Yasir, Grewal, Rabina, Horbach, Olha, Abdaly, Fawzia, Santana, Maria,
+    Talavlikar, Rachel, Aucoin, Michael, Coakley, Annalee, Fabreau, Gabriel E.
+  title: 'Empowering refugee voices: Using Nominal Group Technique (NGT) with a diverse
+    refugee Patient Advisory Committee (PAC) to identify health and research priorities
+    in Calgary, Canada'
+  url: https://ui.adsabs.harvard.edu/abs/2025PLoSO..2023746A
+  year: '2025'
+- authors: Santana, Geraldine Villagrán, Quezada, Víctor, Rius-Ayra, Oriol, Biserova-Tahchieva,
+    Alisiya, Llorca-Isern, Nuria
+  title: Characterization of Mineralogical Species in a Copper Concentrate After Acid
+    Pretreatment
+  url: https://ui.adsabs.harvard.edu/abs/2025Mine...15..520S
+  year: '2025'
+- authors: Rodríguez-Brito, Natalia, Blanco-Peñalver, Concepción, Souto, Ricardo M.,
+    Andrade, Carmen, Santana, Juan J.
+  title: Reassessment of Porosimetry Determinations Using Water Vapor Sorption Measurements
+    for Pastes and Concretes Containing Basaltic Aggregates Compared to the Mercury
+    Intrusion Method
+  url: https://ui.adsabs.harvard.edu/abs/2025Mate...18.2257R
+  year: '2025'
+- authors: Santana, Jordi, Magrinyà, Francesc, Maspoch, Maria Lluïsa
+  title: 'Closing the loop of flexible plastic packaging in Spain: A review of the
+    role of extended producer responsibility and circular economy strategies'
+  url: https://ui.adsabs.harvard.edu/abs/2025JCPro.50445139S
+  year: '2025'
+- authors: Santana, Genilson, Carvalho, Silas L.
+  title: Decay rates given by regularly varying functions for $C_0$-semigroups on
+    Banach spaces
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250509050S
+  year: '2025'
+- authors: Schilling, Alexander, Aehle, Max, Alme, Johan, Barnaföldi, Gergely Gábor,
+    Bíró, Gábor, Bodova, Tea, Borshchov, Vyacheslav, Brink, Anthony van den, Eikeland,
+    Viljar, Feofilov, Gregory, Garth, Christoph, Gauger, Nicolas R., Grøttvik, Ola,
+    Helstrup, Håvard, Igolkin, Sergey, Johansen, Jacob G., Keidel, Ralf, Kobdaj, Chinorat,
+    Kortus, Tobias, Leonhardt, Viktor, Mehendale, Shruti, Mulawade, Raju Ningappa,
+    Odland, Odd Harald, O'Neill, George, Papp, Gábor, Peitzmann, Thomas, Pettersen,
+    Helge Egil Seime, Piersimoni, Pierluigi, Protsenko, Maksym, Rauch, Max, Rehman,
+    Attiq Ur, Richter, Matthias, Röhrich, Dieter, Santana, Joshua, Seco, Joao, Songmoolnak,
+    Arnon, Sudár, Ákos, Tambave, Ganesh, Tymchuk, Ihor, Ullaland, Kjetil, Varga-Kofarago,
+    Monika, Wagner, Boris, Xiao, RenZheng, Yang, Shiming
+  title: Modeling charge collection in silicon pixel detectors for proton therapy
+    applications
+  url: https://ui.adsabs.harvard.edu/abs/2025BPEE...1135005S
+  year: '2025'
+- authors: Bruno, Oscar P., Santana, Manuel A.
+  title: Efficient time-domain scattering synthesis via frequency-domain singularity
+    subtraction
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250506189B
+  year: '2025'
+- authors: Colonius, Fritz, Santana, Alexandre J.
+  title: Global controllability properties of linear control systems
+  url: https://ui.adsabs.harvard.edu/abs/2025arXiv250501063C
+  year: '2025'

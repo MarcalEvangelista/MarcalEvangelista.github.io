@@ -5,7 +5,9 @@ layout: single
 author_profile: true
 ---
 
-A lista de publicações será carregada automaticamente a partir do ADS e ORCID.
+{% for pub in site.data.publications %}
+- **[{{ pub.title }}]({{ pub.url }})**  
+  <small>{{ pub.authors }} — {{ pub.year }}</small>
 
-> Esta seção será preenchida dinamicamente com seus artigos usando uma integração com a API do ADS.
+{% endfor %}
 

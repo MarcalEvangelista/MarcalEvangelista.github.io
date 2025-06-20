@@ -5,9 +5,12 @@ layout: single
 author_profile: true
 ---
 
-Aqui você encontrará uma seleção de projetos científicos e técnicos nos quais estou envolvido:
-
-- **Modelagem da poeira cometária**: Análise espectral e fotométrica da composição de grãos.
-- **Monitoramento de cometas ativos**: Observações ópticas de cometas do tipo JFC e LPC.
-- **Desenvolvimento de pipelines em Python**: Ferramentas para astrometria, fotometria e espectroscopia.
+<ul style="list-style: none; padding-left: 0;">
+  <li style="margin-bottom: 1em;">
+    <a href="/projetos/sob-este-ceu/" style="text-decoration: none;">
+      <img src="/assets/images/sob-este-ceu/logo.jpg" alt="Logo Sob Este Céu" width="40" style="vertical-align: middle; margin-right: 10px;">
+      <strong>Projeto Sob Este Céu</strong>
+    </a>
+  </li>
+</ul>
 

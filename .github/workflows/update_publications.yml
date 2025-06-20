@@ -1,35 +1,35 @@
-name: Update ADS Publications
+name: Atualizar publicações do ADS
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Roda todo domingo à meia-noite UTC
-  workflow_dispatch:     # Também permite execução manual
+    - cron: '0 6 * * 1'  # Toda segunda-feira às 06:00 UTC
+  workflow_dispatch:      # Permite execução manual
 
 jobs:
-  update:
+  update-publications:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout do repositório
+      - name: Clonar repositório
         uses: actions/checkout@v3
 
-      - name: Instalar Python
+      - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Instalar dependências
         run: pip install requests pyyaml
 
-      - name: Rodar script para atualizar publicações
-        run: python scripts/update_publications.py
+      - name: Rodar script de atualização
+        run: python script/update_publications.py
         env:
           ADS_TOKEN: ${{ secrets.ADS_TOKEN }}
 
-      - name: Commit e Push automático se houver mudanças
+      - name: Confirmar alterações no Git
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           git add _data/publications.yml
-          git diff --cached --quiet || git commit -m "Atualização automática das publicações do ADS"
+          git commit -m "Atualizar publicações automaticamente via ADS" || echo "Sem mudanças"
           git push
+

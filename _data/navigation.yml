@@ -1,10 +1,10 @@
 main:
-  - title: "Projects"
-    url: /projects/
-  - title: "Publications"
+  - title: "Projetos"
+    url: /projetos/
+  - title: "Publicações"
     url: /publications/
-  - title: "About"
+  - title: "Sobre"
     url: /about/
-  - title: "Contact"
+  - title: "Contato"
     url: /contact/
 
